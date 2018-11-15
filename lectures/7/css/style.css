@@ -6,5 +6,7 @@
 border:4px dashed #fa0366;
     border-radius:12px;
     box-shadow:7px 5px 7px 3px #c5a7a7;
+
+    cursor: pointer;
     /* add CSS here */
 }
