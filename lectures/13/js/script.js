@@ -26,14 +26,25 @@ var correctAnswers = 0;
 var quizOver = false;
 displayCurrentQuestion();
 document.getElementById("quiz-message").style.display = 'none';
+
 function displayNext() {
     /*Write your code here */
+    currentQuestion++;
+    document.getElementById("question").innerHTML=questions[currentQuestion].question;
+
+
+
 }
 
 function displayCurrentQuestion() {
     /*Write your code here */
-}
 
+       document.getElementById("question").innerHTML=questions[currentQuestion].question;
+
+
+
+
+}
 function resetQuiz() {
     currentQuestion = 0;
     correctAnswers = 0;

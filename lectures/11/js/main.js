@@ -1,22 +1,22 @@
 //============================================
 //-----------  STEP - 1 ----------------------
 //============================================
-
-
-/*var todos = [];
+/*
+var todos = [];
 function add() {
     var task = document.getElementById("task").value;
     todos.push(task);
     document.getElementById('todos').innerText = todos;
-}*/
-
-
+}
+*/
+/*ANS: it display the content what we type in box and pressed add button,
+ for example if i type in box "breakfast at 8" then press add so it display "breakfast at 8"*/
 //============================================
 //-----------  STEP - 2 ----------------------
 //============================================
 
-
-/*var todos = [];
+/*
+var todos = [];
 function add() {
     var task = document.getElementById('task').value;
     todos.push(task);
@@ -36,13 +36,23 @@ function show() {
     document.getElementById('todos').appendChild(ul);
 }*/
 
-
+/*Ans: it can display content in a list and if i add more then it repeat all
+ previous content then display current content in a list for example :
+ if i type "breakfast at 8am"
+ it displayed
+"breakfast at 8am"
+and then if i add again this time i add
+"lunch at 12pm"
+it displayed previous data:
+breakfast at 8am
+lunch at 12pm
+*/
 //============================================
 //-----------  STEP - 3 ----------------------
 //============================================
 
-
 /*
+
 function getTodos() {
     var todos = [];
     var todos_str = localStorage.getItem('todo');
@@ -84,16 +94,19 @@ function show() {
     document.getElementById('todos').appendChild(ul);
 }
 show();
-*/
+
+
+Ans: when i typed "breakfast at 8am " in it then its display "breakfast at 8am" and added
+some delete option in it and option does'nt work*/
 
 
 
 //============================================
 //-----------  STEP - 4 ----------------------
 //============================================
+/*
 
-
-/*function getTodos() {
+function getTodos() {
     var todos = [];
     var todos_str = localStorage.getItem('todo');
     if(todos_str !== null)
@@ -162,9 +175,9 @@ function isDone(e) {
     localStorage.setItem('todo',JSON.stringify(todos));
     show();
 }
-show();*/
+show();
 
-
+Ans: it can save all previous inputs and also delete option works and delete which input i want to delete*/
 
 
 

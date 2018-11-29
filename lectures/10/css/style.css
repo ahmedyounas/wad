@@ -3,7 +3,7 @@
 [class*="col-"] {
     width: 100%;
 }
-@media only screen and (min-width: 400px) and (max-width: 599px) {
+@media only screen and (min-width: 400px)  {
     /* For desktop: */
     .col-xs-1 {width: 8.33%;}
     .col-xs-2 {width: 16.66%;}
@@ -18,7 +18,7 @@
     .col-xs-11 {width: 91.66%;}
     .col-xs-12 {width: 100%;}
 }
-@media only screen and (min-width: 600px)  and (max-width: 799px){
+@media only screen and (min-width: 600px)  {
     /* For desktop: */
     .col-s-1 {width: 8.33%;}
     .col-s-2 {width: 16.66%;}
@@ -33,7 +33,7 @@
     .col-s-11 {width: 91.66%;}
     .col-s-12 {width: 100%;}
 }
-@media only screen and (min-width: 800px)  and (max-width: 999px){
+@media only screen and (min-width: 800px){
     /* For desktop: */
     .col-m-1 {width: 8.33%;}
     .col-m-2 {width: 16.66%;}
@@ -48,7 +48,7 @@
     .col-m-11 {width: 91.66%;}
     .col-m-12 {width: 100%;}
 }
-@media only screen and (min-width: 1000px)  and (max-width: 1199px){
+@media only screen and (min-width: 1000px) {
 
     .col-l-1 {width: 8.33%;}
     .col-l-2 {width: 16.66%;}
