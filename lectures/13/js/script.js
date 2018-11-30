@@ -30,20 +30,45 @@ document.getElementById("quiz-message").style.display = 'none';
 function displayNext() {
     /*Write your code here */
     currentQuestion++;
-    document.getElementById("question").innerHTML=questions[currentQuestion].question;
+
+    if(currentQuestion == questions.length)
+    {
+        document.getElementById("next-btn").innerText="Play Again?";
+       displayScore();
+
+    }
+displayCurrentQuestion();
 
 
 
 }
 
 function displayCurrentQuestion() {
+    /*   document.getElementById("question").innerHTML=questions[currentQuestion].question;
+    document.getElementById("choice-list").innerHTML=questions[currentQuestion].choices;
+
+*/
+    var question=document.getElementById("question");
+    var answers=document.getElementById("choice-list");
+    question.innerText=questions[currentQuestion].question;
+    answers.innerHTML="";
+    for(i=0;i<questions[currentQuestion].choices.length; i++)
+    {
+        answers.innerHTML+="<li>"+"<input type = 'radio' name ='choices' value= 'questions[currentQuestion].choices[i]' >"+ questions[currentQuestion].choices[i]+ "</li>";
+
+
+    }
+
+    if(document.querySelector("input[type=radio]:checked"))
+    {
+
+correctAnswers++;
+
+    }
+
+
+
     /*Write your code here */
-
-       document.getElementById("question").innerHTML=questions[currentQuestion].question;
-
-
-
-
 }
 function resetQuiz() {
     currentQuestion = 0;
