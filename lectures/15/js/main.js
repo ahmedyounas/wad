@@ -1,72 +1,81 @@
-/*
-
-var acctitle;
-var accbal;
-var accurency;
-accountinfo();
-function accountinfo()
-    {
-       acctitle=document.getElementById("title").innerText = "Ahmed Younas"
-       accbal=document.getElementById("balance").innerText = "100000"
-        accurency=document.getElementById("currency").innerText = "PKR"
-
-
+var savingsAccount = {
+    title: 'Muhammad Ali',
+    balance: 962155,
+    currency: 'PKRS',
+    IBAN: 'PKN1234654321',
+    deposit: function addMoney(e,amount) {
+        if(e.keyCode === 13) {
+            if (!isNaN(amount) && parseInt(amount) > 0) {
+                savingsAccount.balance += parseInt(amount);
+                document.getElementById('deposit').value = '';
+                loadAccount();
+                savingsAccount.printTransactions('Credit', amount);
+            }else {
+                document.getElementById("deposit-msg").style.color = "red";
+                document.getElementById("deposit-msg").innerText = "Enter Valid Amount";
+            }
+        }
+    },
+    withdraw: function removeMoney(e,amount) {
+        if(e.keyCode === 13) {
+            if (!isNaN(amount) && parseInt(amount) > 0) {
+                var verifyBalance = savingsAccount.balance - parseInt(amount);
+                if(verifyBalance >= 0) {
+                    savingsAccount.balance -= parseInt(amount);
+                    document.getElementById('withdraw').value = '';
+                    loadAccount();
+                    savingsAccount.printTransactions('Debit', amount);
+                }
+                else {
+                    document.getElementById("withdraw-msg").style.color = "orange";
+                    document.getElementById("withdraw-msg").innerText = "Don't have sufficient amount in account ";
+                }
+            }else {
+                document.getElementById("withdraw-msg").style.color = "red";
+                document.getElementById("withdraw-msg").innerText = "Enter Valid Amount";
+            }
+        }
+    },
+    printTransactions: function print(tType, amount){
+        var table = document.getElementById("transaction-table");
+        var row = document.createElement("tr");
+        var dateTd = document.createElement("td");
+        var d = new Date();
+        d = month[d.getMonth()] + ' '+d.getDate() +', '+d.getFullYear()+' '+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds();
+        dateTd.innerHTML = d;
+        var typeTd = document.createElement("td");
+        typeTd.innerHTML = tType;
+        var amountTd = document.createElement("td");
+        amountTd.innerHTML = amount;
+        row.appendChild(dateTd);
+        row.appendChild(typeTd);
+        row.appendChild(amountTd);
+        table.appendChild(row);
     }
-*/
+};
 
-var AccountDetails=[{AccountTitle:'Ahmed younas',
-    AvailibleBalance:198990,
-    AccountCurrency:'PKR',
-    IBAN:'pk78723947329842767'
-
-},{
-    AccountTitle:'hamza ghayas',
-    AvailibleBalance:6876748,
-    AccountCurrency:'PKR',
-    IBAN:'pk78723947329842768'
-
-},{
-
-    AccountTitle:'asjaad meesna',
-    AvailibleBalance:6876748,
-    AccountCurrency:'PKR',
-    IBAN:"pk78723947329842769"
-
-
-}];
-var currentUser=0;
-var title=document.getElementById('title');
-var balance=document.getElementById('balance');
-var currency=document.getElementById('currency');
-var Iban=document.getElementById('IBAN');
-title.innerHTML=AccountDetails[0].AccountTitle;
-balance.innerHTML=AccountDetails[currentUser].AvailibleBalance;
-currency.innerHTML=AccountDetails[currentUser].AccountCurrency;
-Iban.innerHTML=AccountDetails[currentUser].IBAN;
-var deposit;
-var withdraw;
-
-
-function depositamount(event)
-{
-    deposit= document.getElementById("deposit");
-    if(event.keycode==13||c.key=="Enter")
-    {
-        deposit=AvailibleBalance=AvailibleBalance+deposit;
-        balance.innerHTML=AccountDetails[currentUser].AvailibleBalance+deposit;
-    }
-
-
-
+loadAccount();
+function loadAccount() {
+    var title = document.getElementById('title');
+    var balance = document.getElementById('balance');
+    var currency = document.getElementById('currency');
+    var IBAN = document.getElementById('IBAN');
+    title.innerHTML = savingsAccount.title;
+    balance.innerHTML = savingsAccount.balance;
+    currency.innerHTML = savingsAccount.currency;
+    IBAN.innerHTML = savingsAccount.IBAN;
 }
-function withdrawamount(c)
-{
 
-    if(c.keycode==13||c.key==="Enter")
-    {
-       // AvailibleBalance=AvailibleBalance-withdraw;
-        balance.innerHTML=AccountDetails[currentUser].AvailibleBalance;
-    }
-
-
-}
+var month = [];
+month[0] = "January";
+month[1] = "February";
+month[2] = "March";
+month[3] = "April";
+month[4] = "May";
+month[5] = "June";
+month[6] = "July";
+month[7] = "August";
+month[8] = "September";
+month[9] = "October";
+month[10] = "November";
+month[11] = "December";
