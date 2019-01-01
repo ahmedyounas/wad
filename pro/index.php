@@ -1,3 +1,11 @@
+<?php
+require 'server/getCategories.php';
+
+require 'server/getBrands.php';
+
+require 'server/db_connection.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,18 +72,7 @@
                     Categories
                 </a>
                 <ul class="collapse show list-unstyled" id="homeSubmenu">
-                    <li>
-                        <a class="nav-link"  href="#">Laptops</a>
-                    </li>
-                    <li>
-                        <a class="nav-link"  href="#">Computers</a>
-                    </li>
-                    <li>
-                        <a class="nav-link"  href="#">Mobiles</a>
-                    </li>
-                    <li>
-                        <a class="nav-link"  href="#">Tablets</a>
-                    </li>
+                    <?php getCategories() ?>
                 </ul>
             </li>
             <li class="active">
@@ -84,18 +81,7 @@
                     Brands
                 </a>
                 <ul class="collapse show list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a class="nav-link" href="#">Apple</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">Sony</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">Dell</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">Toshiba</a>
-                    </li>
+                    <?php getBrands(); ?>
                 </ul>
             </li>
             <li>
@@ -105,32 +91,44 @@
                 </a>
             </li>
             <li>
+
                 <a class="nav-link"  href="#">
                     <i class="fas fa-paper-plane"></i>
                     Contact
+
                 </a>
+
             </li>
+
         </ul>
     </nav>
+
     <article id="content" class="container-fluid bg-white">
 
         <div class="row">
+
             <div class="col">
                 Content
             </div>
+
         </div>
     </article>
 
 
+
 </div>
 <footer class="container-fluid">
-        <div class="row">
-            <div class="col text-center">
-               &copy; 2019 by Muhammad Ali Makhdoom
-            </div>
+
+    <div class="row">
+        <div class="col text-center">
+            &copy; 2019 by Muhammad Ali Makhdoom
+
         </div>
-    </footer>
+    </div>
+</footer>
+
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/bootstrap.bundle.js"></script>
 </body>
+
 </html>
