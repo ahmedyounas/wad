@@ -1,12 +1,7 @@
-<?php
-require 'server/getCategories.php';
-
-require 'server/getBrands.php';
-
-require 'server/db_connection.php';
-?>
-
 <!DOCTYPE html>
+<?php
+require "server/functions.php";
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -72,7 +67,7 @@ require 'server/db_connection.php';
                     Categories
                 </a>
                 <ul class="collapse show list-unstyled" id="homeSubmenu">
-                    <?php getCategories() ?>
+                    <?php getCats(); ?>
                 </ul>
             </li>
             <li class="active">
@@ -91,44 +86,32 @@ require 'server/db_connection.php';
                 </a>
             </li>
             <li>
-
                 <a class="nav-link"  href="#">
                     <i class="fas fa-paper-plane"></i>
                     Contact
-
                 </a>
-
             </li>
-
         </ul>
     </nav>
-
     <article id="content" class="container-fluid bg-white">
 
         <div class="row">
-
             <div class="col">
                 Content
             </div>
-
         </div>
     </article>
 
 
-
 </div>
 <footer class="container-fluid">
-
-    <div class="row">
-        <div class="col text-center">
-            &copy; 2019 by Muhammad Ali Makhdoom
-
+        <div class="row">
+            <div class="col text-center">
+               &copy; 2019 by Muhammad Ali Makhdoom
+            </div>
         </div>
-    </div>
-</footer>
-
+    </footer>
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/bootstrap.bundle.js"></script>
 </body>
-
 </html>
