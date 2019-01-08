@@ -1,6 +1,7 @@
 <?php
 require_once "db_connection.php";
-if(isset($_POST['insert_pro'])){
+if(isset($_POST['insert_pro']))
+{
     //getting text data from the fields
     $pro_title = $_POST['pro_title'];
     $pro_cat = $_POST['pro_cat'];
@@ -8,12 +9,10 @@ if(isset($_POST['insert_pro'])){
     $pro_price = $_POST['pro_price'];
     $pro_desc = $_POST['pro_desc'];
     $pro_keywords = $_POST['pro_keywords'];
-
     //getting image from the field
     $pro_image = $_FILES['pro_image']['name'];
     $pro_image_tmp = $_FILES['pro_image']['tmp_name'];
     move_uploaded_file($pro_image_tmp,"product_images/$pro_image");
-
     $insert_product = "insert into products (pro_cat, pro_brand,pro_title,pro_price,pro_desc,pro_image,pro_keywords) 
                   VALUES ('$pro_cat','$pro_brand','$pro_title','$pro_price','$pro_desc','$pro_image','$pro_keywords');";
     $insert_pro = mysqli_query($con, $insert_product);
@@ -64,13 +63,13 @@ if(isset($_POST['insert_pro'])){
                     <select class="form-control" id="pro_cat" name="pro_cat">
                         <option>Select Category</option>
                         <?php
-                            $getCatsQuery = "select * from categories";
-                            $getCatsResult = mysqli_query($con,$getCatsQuery);
-                            while($row = mysqli_fetch_assoc($getCatsResult)){
-                                $cat_id = $row['cat_id'];
-                                $cat_title = $row['cat_title'];
-                                echo "<option value='$cat_id'>$cat_title</option>";
-                            }
+                        $getCatsQuery = "select * from categories";
+                        $getCatsResult = mysqli_query($con,$getCatsQuery);
+                        while($row = mysqli_fetch_assoc($getCatsResult)){
+                            $cat_id = $row['cat_id'];
+                            $cat_title = $row['cat_title'];
+                            echo "<option value='$cat_id'>$cat_title</option>";
+                        }
                         ?>
                     </select>
                 </div>
@@ -88,13 +87,13 @@ if(isset($_POST['insert_pro'])){
                     <select class="form-control" id="pro_brand" name="pro_brand">
                         <option>Select Brand</option>
                         <?php
-                            $getBrandsQuery = "select * from brands";
-                            $getBrandsResult = mysqli_query($con,$getBrandsQuery);
-                            while($row = mysqli_fetch_assoc($getBrandsResult)){
-                                $brand_id = $row['brand_id'];
-                                $brand_title = $row['brand_title'];
-                                echo "<option value='$brand_id'>$brand_title</option>";
-                            }
+                        $getBrandsQuery = "select * from brands";
+                        $getBrandsResult = mysqli_query($con,$getBrandsQuery);
+                        while($row = mysqli_fetch_assoc($getBrandsResult)){
+                            $brand_id = $row['brand_id'];
+                            $brand_title = $row['brand_title'];
+                            echo "<option value='$brand_id'>$brand_title</option>";
+                        }
                         ?>
                     </select>
                 </div>
@@ -158,4 +157,3 @@ if(isset($_POST['insert_pro'])){
 </div>
 </body>
 </html>
-
