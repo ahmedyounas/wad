@@ -21,7 +21,7 @@ require "server/functions.php";
                     document.getElementById("ProductSearch").innerHTML = this.responseText;
                 }
             };
-            xmlhttp.open("GET", "search.php?ProductSearch=" + str, true);
+            xmlhttp.open("GET", "check_product.php?ProductSearch=" + str, true);
             xmlhttp.send();
         }
     </script>
